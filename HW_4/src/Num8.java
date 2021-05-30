@@ -14,14 +14,13 @@ public class Num8 {
 
 class Point {
     protected int x, y;
-
+    public Point(int x, int y) {this.x = x; this.y = y; }
+    public Point() {}
+    public int getX() { return x; }
+    public int getY() { return y; }
     public void move(int x, int y) {
         this.x = x;
         this.y = y;
-    }
-    public String toString() {
-        String ret = "(" + x + "," + y + ")의 점";
-        return ret;
     }
 }
 
@@ -36,6 +35,12 @@ class PositivePoint extends Point {
             this.y = 0;
         }
     }
+
+    public String toString() {
+        String ret = "(" + x + "," + y + ")의 점";
+        return ret;
+    }
+
     @Override
     public void move(int x, int y) {
         if (x >= 0 && y >= 0) {
